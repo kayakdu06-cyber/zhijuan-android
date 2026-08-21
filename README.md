@@ -22,7 +22,7 @@
 
 - 机器可读状态：`docs/ai/PROJECT-STATE.json`
 - 节点索引：`docs/ai/NODE-REPORT-INDEX.md`
-- 当前节点：`docs/ai/NODE-REPORT-V9-CR25-28.md`
+- 当前节点：`docs/ai/NODE-REPORT-V10-PUBLIC-REPOSITORY.md`
 - 发布门禁证据：`docs/ai/TEST-EVIDENCE-S4-V3.md`
 - 交接：`docs/ai/HANDOFF-V3.md`
 - 第三方清单：`THIRD_PARTY_NOTICES.md`

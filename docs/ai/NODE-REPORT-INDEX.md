@@ -39,11 +39,11 @@
 | `V7-CR21-22` | `COMPLETE` | 结算修复重试、次数上限、三档叙事尺度与身体/感官连续性 | `docs/ai/NODE-REPORT-V7-CR21-22.md` | JVM 74/0；API 35 runner 27/0；lint/security/signing/真机 release PASS | `REAL_PROVIDER_QUALITY_VALIDATION` |
 | `V8-CR23-24` | `COMPLETE` | 活动/待提交项目安全删除、API 配置隔离、三档前台说明移除 | `docs/ai/NODE-REPORT-V8-CR23-24.md` | JVM 75/0；API 35 29/0；lint/security/signing/真机 release PASS | `REAL_PROVIDER_QUALITY_VALIDATION` |
 | `V9-CR25-28` | `COMPLETE` | 有限返回栈、三档剧情节奏、沉浸尺度加强、底栏 `6dp` 留白 | `docs/ai/NODE-REPORT-V9-CR25-28.md` | JVM 78/0；API 35 `OK (30)`；lint/security/signing/真机 release PASS | `REAL_PROVIDER_QUALITY_VALIDATION` |
-| `V10-PUBLIC-REPOSITORY` | `IN_PROGRESS` | 公开 GitHub 源码仓库、敏感信息排除与发布核验 | `docs/ai/NODE-REPORT-V10-PUBLIC-REPOSITORY.md` | `SECURITY_SCAN_OK`；远程推送待完成 | `PUSH_MAIN` |
+| `V10-PUBLIC-REPOSITORY` | `COMPLETE` | 公开 GitHub 源码仓库、敏感信息排除与发布核验 | `docs/ai/NODE-REPORT-V10-PUBLIC-REPOSITORY.md` | 206 文件；`SECURITY_SCAN_OK`；匿名读取 PASS | `REAL_PROVIDER_QUALITY_VALIDATION` |
 
 ## 当前状态
 
-- `current_node=V10-PUBLIC-REPOSITORY`，`status=IN_PROGRESS`；公开仓库目标为 `https://github.com/kayakdu06-cyber/zhijuan-android`，等待首次 `main` 推送验证。
+- `current_node=V10-PUBLIC-REPOSITORY`，`status=COMPLETE`，`pending_gates=[]`；公开仓库为 `https://github.com/kayakdu06-cyber/zhijuan-android`，`main` 已推送并通过匿名读取验证。
 - 实体手机 V9 release 已使用 `adb install -r` 覆盖安装成功；没有卸载、清数据或触发真实生成。当前 APK 为 `outputs/zhijuan-v9-release.apk`。
 - 阅读/生成现使用可保存有限返回栈；返回父层时弹栈，不会再把两页互相设为返回目标。
 - 项目级剧情节奏为 `舒展 / 均衡 / 紧凑`，旧书默认“均衡”，仅影响后续正文；不跳过当前计划或增加调用。

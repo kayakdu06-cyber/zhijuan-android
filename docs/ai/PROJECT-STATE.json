@@ -9,7 +9,7 @@
   "topLevelRoutes": 4,
   "providerProtocols": 1,
   "currentNode": "V10-PUBLIC-REPOSITORY",
-  "currentStatus": "IN_PROGRESS",
+  "currentStatus": "COMPLETE",
   "completedNodes": [
     "V3-S0",
     "V3-SEPARATION",
@@ -33,9 +33,10 @@
     "V6-CR14-20",
     "V7-CR21-22",
     "V8-CR23-24",
-    "V9-CR25-28"
+    "V9-CR25-28",
+    "V10-PUBLIC-REPOSITORY"
   ],
-  "pendingGates": ["V10-PUBLIC-REPOSITORY"],
+  "pendingGates": [],
   "verified": {
     "jvmTests": {"tests": 78, "failures": 0, "errors": 0, "skipped": 0},
     "api35AppTests": {"reported": 30, "tests": 28, "failures": 0, "skipped": 2},
@@ -71,6 +72,7 @@
     "v8PhysicalRelease": {"status": "PASS", "device": "d2b15cce", "api": 36, "installMode": "adb install -r", "dataCleared": false, "coldLaunchMs": 129, "existingDraftPreserved": true, "realDeleteConfirmed": false, "realProviderCalls": 0},
     "v9Cr25To28": {"status": "PASS", "navigationBackStack": "FINITE_SAVED", "readerGenerationLoop": "FIXED", "plotPaces": ["舒展", "均衡", "紧凑"], "legacyPlotPaceDefault": "均衡", "projectSchema": "1.2", "contentScaleImmersivePrompt": "STRENGTHENED", "adultOnlyGuard": true, "bodySensoryContinuity": true, "coercionFactContinuity": true, "externalProviderCompliance": "UNVERIFIED", "bottomNavigationTopPaddingDp": 6, "normalCallsPerChapter": 2, "realProviderCalls": 0},
     "v9PhysicalRelease": {"status": "PASS", "device": "d2b15cce", "api": 36, "installMode": "adb install -r", "dataCleared": false, "realProviderCalls": 0},
+    "publicRepository": {"status": "PASS", "url": "https://github.com/kayakdu06-cyber/zhijuan-android", "visibility": "PUBLIC", "branch": "main", "anonymousRead": "PASS", "initialSourceCommit": "baa7fedd1a459a29ed8be43b014f27cbc0f9cd01", "trackedFiles": 206, "oldArchivePayloadsPresent": false},
     "debugApkSha256": "2EA769906AB56EF7DAED021D0095C0DE10A570CAF2EC472588FE0125C0FEF88E",
     "releaseApkSha256": "D16A4507CA38C975E396D8499145F1FDE9FA93CBE3B152A8FB5BC65C2570F8FB",
     "brandAssetSha256": "AD63D0BB3EBD000ADEBEBE5F1F72C5DAC101DD7DD608A94AED3AB1EDF4DBB8BA"
