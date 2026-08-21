@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "taskId": "task_01HVALID0001",
+  "chapter": 2,
+  "baseRevision": 1,
+  "summary": "林砚在渡口遭遇追兵，为保护苏禾将唯一的铜钥交给她保管，两人决定改道前往旧盐仓。",
+  "goalOutcome": {"status": "ACHIEVED", "evidence": {"paragraphIndex": 8, "excerpt": "林砚把铜钥按进苏禾掌心，示意她立刻收好。"}},
+  "events": [
+    {
+      "eventId": "event_01HVALID001",
+      "eventKey": "transfer:item_key001:char_lin001:char_su0001",
+      "participants": ["char_lin001", "char_su0001", "item_key001"],
+      "action": "TRANSFER_ITEM",
+      "before": "铜钥由林砚持有",
+      "after": "铜钥由苏禾持有",
+      "result": "苏禾负责保管铜钥，两人改道旧盐仓",
+      "stateTargets": ["item.holderCharacterId"],
+      "storyTime": "第二日黄昏",
+      "evidence": {"paragraphIndex": 8, "excerpt": "林砚把铜钥按进苏禾掌心，示意她立刻收好。"}
+    }
+  ],
+  "entityCreates": [],
+  "mutations": [
+    {
+      "operation": "SET",
+      "entityType": "ITEM",
+      "entityId": "item_key001",
+      "target": "item.holderCharacterId",
+      "before": "char_lin001",
+      "after": "char_su0001",
+      "evidence": {"paragraphIndex": 8, "excerpt": "林砚把铜钥按进苏禾掌心，示意她立刻收好。"}
+    }
+  ],
+  "foreshadowActions": [],
+  "openTaskActions": [
+    {
+      "operation": "OPEN",
+      "id": "task_reach_salt_warehouse",
+      "description": "避开渡口追兵，前往旧盐仓",
+      "relatedEntityIds": ["char_lin001", "char_su0001", "loc_salt001"],
+      "evidence": {"paragraphIndex": 10, "excerpt": "去旧盐仓。林砚指向河湾后的黑影。"}
+    }
+  ],
+  "continuationHook": "追兵封锁渡口，林砚与苏禾携钥转向旧盐仓。"
+}

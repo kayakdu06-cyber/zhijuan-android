@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "cases": [
+    {
+      "id": "dead-character-present",
+      "before": {"lastCommittedChapter": 3, "characters": [{"id": "char_dead001", "alive": false, "knownFactIds": []}], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 4, "povCharacterId": "char_live001", "allowedEntityIds": ["char_live001"]},
+      "proposal": {"presentEntityIds": ["char_dead001"], "mentionedOnlyEntityIds": [], "mutations": [], "events": []},
+      "expectedHardViolations": ["DEAD_CHARACTER_PRESENT"]
+    },
+    {
+      "id": "pov-not-present",
+      "before": {"lastCommittedChapter": 1, "characters": [{"id": "char_pov0001", "alive": true, "knownFactIds": []}], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 2, "povCharacterId": "char_pov0001", "allowedEntityIds": ["char_pov0001"]},
+      "proposal": {"presentEntityIds": [], "mentionedOnlyEntityIds": [], "mutations": [], "events": []},
+      "expectedHardViolations": ["POV_NOT_PRESENT"]
+    },
+    {
+      "id": "unexpected-cast",
+      "before": {"lastCommittedChapter": 2, "characters": [], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 3, "povCharacterId": "char_pov0001", "allowedEntityIds": ["char_pov0001"]},
+      "proposal": {"presentEntityIds": ["char_pov0001", "char_extra01"], "mentionedOnlyEntityIds": [], "mutations": [], "events": []},
+      "expectedHardViolations": ["ENTITY_NOT_ALLOWED"]
+    },
+    {
+      "id": "chapter-gap",
+      "before": {"lastCommittedChapter": 5, "characters": [], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 7, "povCharacterId": "char_pov0001", "allowedEntityIds": ["char_pov0001"]},
+      "proposal": {"presentEntityIds": ["char_pov0001"], "mentionedOnlyEntityIds": [], "mutations": [], "events": []},
+      "expectedHardViolations": ["CHAPTER_SEQUENCE_INVALID"]
+    },
+    {
+      "id": "unplanted-payoff",
+      "before": {"lastCommittedChapter": 4, "characters": [], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 5, "povCharacterId": "char_pov0001", "allowedEntityIds": ["char_pov0001"]},
+      "proposal": {"presentEntityIds": ["char_pov0001"], "mentionedOnlyEntityIds": [], "mutations": [], "events": [], "foreshadowActions": [{"operation": "PAY_OFF", "id": "foreshadow_missing"}]},
+      "expectedHardViolations": ["UNPLANTED_FORESHADOW_PAYOFF"]
+    },
+    {
+      "id": "unique-item-two-holders",
+      "before": {"lastCommittedChapter": 6, "characters": [], "items": [{"id": "item_unique01", "unique": true, "holderCharacterId": "char_owner01", "locationId": null}], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 7, "povCharacterId": "char_owner01", "allowedEntityIds": ["char_owner01", "char_other01", "item_unique01"]},
+      "proposal": {"presentEntityIds": ["char_owner01", "char_other01"], "mentionedOnlyEntityIds": [], "mutations": [{"entityId": "item_unique01", "target": "item.holderCharacterId", "before": "char_owner01", "after": ["char_owner01", "char_other01"]}], "events": []},
+      "expectedHardViolations": ["UNIQUE_ITEM_CONFLICT"]
+    },
+    {
+      "id": "unknown-knowledge",
+      "before": {"lastCommittedChapter": 7, "characters": [{"id": "char_knower01", "alive": true, "knownFactIds": []}], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 8, "povCharacterId": "char_knower01", "allowedEntityIds": ["char_knower01", "fact_secret01"]},
+      "proposal": {"presentEntityIds": ["char_knower01"], "mentionedOnlyEntityIds": [], "usedKnowledge": [{"characterId": "char_knower01", "factId": "fact_secret01"}], "mutations": [], "events": []},
+      "expectedHardViolations": ["UNKNOWN_KNOWLEDGE_USED"]
+    },
+    {
+      "id": "state-change-without-event",
+      "before": {"lastCommittedChapter": 8, "characters": [{"id": "char_hurt001", "alive": true, "condition": "healthy", "knownFactIds": []}], "items": [], "foreshadows": [], "eventKeys": []},
+      "task": {"chapter": 9, "povCharacterId": "char_hurt001", "allowedEntityIds": ["char_hurt001"]},
+      "proposal": {"presentEntityIds": ["char_hurt001"], "mentionedOnlyEntityIds": [], "mutations": [{"entityId": "char_hurt001", "target": "character.condition", "before": "healthy", "after": "injured"}], "events": []},
+      "expectedHardViolations": ["MUTATION_WITHOUT_EVENT"]
+    },
+    {
+      "id": "repeated-one-time-event",
+      "before": {"lastCommittedChapter": 9, "characters": [], "items": [], "foreshadows": [], "eventKeys": ["first_meeting:char_a000001:char_b000001"]},
+      "task": {"chapter": 10, "povCharacterId": "char_a000001", "allowedEntityIds": ["char_a000001", "char_b000001"]},
+      "proposal": {"presentEntityIds": ["char_a000001", "char_b000001"], "mentionedOnlyEntityIds": [], "mutations": [], "events": [{"eventKey": "first_meeting:char_a000001:char_b000001"}]},
+      "expectedHardViolations": ["ONE_TIME_EVENT_REPLAY"]
+    }
+  ]
+}

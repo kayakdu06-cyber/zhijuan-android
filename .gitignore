@@ -1,0 +1,36 @@
+# Gradle and Android build state
+.gradle/
+.gradle-user/
+.kotlin/
+**/build/
+local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+
+# IDE and operating-system files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Credentials and signing material
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+
+# Generated packages and local release artifacts
+outputs/
+*.apk
+*.aab
+
+# Local user data and temporary files
+*.tmp
+*.bak
+*.log
+
